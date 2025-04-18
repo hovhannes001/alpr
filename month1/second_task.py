@@ -1,4 +1,4 @@
-
+import cv2
 
 video2 = cv2.VideoCapture("traffic.webm")
 
