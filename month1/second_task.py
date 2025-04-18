@@ -1,9 +1,3 @@
-import cv2
-import sys
-from pathlib import Path
-
-custom_path = Path("./image_and_videos").resolve()
-sys.path.append(str(custom_path))
 
 
 video2 = cv2.VideoCapture("traffic.webm")
@@ -24,7 +18,7 @@ while video2.isOpened():
     if ret:
         output.write(frame)
         cv2.imshow("Recording", frame)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        if cv2.waitKey(1) == ord('q'):
             break
     else:
         break
@@ -39,7 +33,7 @@ while video.isOpened():
     ret, frame = video.read()
     if ret:
         cv2.imshow("Playback", frame)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        if cv2.waitKey(1) == ord('q'):
             break
     else:
         break
